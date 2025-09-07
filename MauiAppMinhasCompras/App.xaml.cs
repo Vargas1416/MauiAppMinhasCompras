@@ -10,7 +10,7 @@ namespace MauiAppMinhasCompras
         {
             get
             {
-                if(_db == null)
+                if (_db == null)
                 {
                     string path = Path.Combine(
                         Environment.GetFolderPath(
@@ -30,6 +30,16 @@ namespace MauiAppMinhasCompras
 
             //MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());
+        }
+
+        protected override Window CreateWindow(IActivationState activateState)
+        {
+            var window = base.CreateWindow(activateState);
+
+            window.Width = 450;
+            window.Height = 600;
+
+            return window;
         }
     }
 }
